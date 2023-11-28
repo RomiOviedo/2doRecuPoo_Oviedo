@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RecuPoo.Entidades
+﻿namespace RecuPoo.Entidades
 {
     public class Dolar : Moneda
     {
@@ -22,10 +16,10 @@ namespace RecuPoo.Entidades
         {
 
             return this.cantidad * (precioDolar * 0.3);
-            
+
         }
 
 
-      
+
     }
 }

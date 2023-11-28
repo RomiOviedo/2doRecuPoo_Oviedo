@@ -43,7 +43,19 @@ namespace RecuPoo.Entidades
 
         public override string MostrarMoneda(double precioDolar)
         {
-            return $"tipo:{this.tipoCripto} cantidad:{this.cantidad} Valor en dolares:{ValorEnDolares} ";
+
+            string info = "";
+            info+= $"tipo:{this.tipoCripto}, cantidad:{this.cantidad}, Valor en dolares:{ValorEnDolares} ";
+
+            if (this.tipoCripto==TipoCripto.Ethereum)
+            {
+                info += $", precio en pesos: {this.cantidad*735606}";
+            }
+            if (this.tipoCripto == TipoCripto.Bitcoin)
+            {
+                info += $", precio en pesos: {this.cantidad * 13000000}";
+            }
+            return info;
         }
 
         public enum TipoCripto

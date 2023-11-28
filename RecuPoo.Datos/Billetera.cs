@@ -1,22 +1,17 @@
 ﻿using RecuPoo.Entidades;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RecuPoo.Datos
 {
     public static class Billetera
     {
-        private static  List<Moneda> moneda;
+        private static List<Moneda> moneda;
 
 
         public static void AgregarMoneda(Moneda m)
         {
-            if (m is Dolar )
+            if (m is Dolar)
             {
                 if (m.ValorEnDolares > 200)
                 {
@@ -24,20 +19,15 @@ namespace RecuPoo.Datos
                 }
 
             }
-            if (m is Crypto )
-            {
-                moneda.Add(m);
-
-            }
             moneda.Add(m);
 
 
 
         }
-               
-                
-                
-         static Billetera()
+
+
+
+        static Billetera()
         {
             moneda = new List<Moneda>();
         }
@@ -50,15 +40,15 @@ namespace RecuPoo.Datos
             {
                 if (item is Dolar d)
                 {
-                    info += $"{d.GetType().Name},  Valor En Dolares:  {d.ValorEnDolares}\n";
+                    info += $"{item.MostrarMoneda(ValorDolar)}\n";
                 }
                 if (item is Crypto c)
                 {
-                    info += $"{c.GetType().Name}, Valor En Dolares: {c.ValorEnDolares}\n";
+                    info += $"{c.GetType().Name}, {item.MostrarMoneda(ValorDolar)}\n";
                 }
 
             }
-                return info;
+            return info;
 
 
 
